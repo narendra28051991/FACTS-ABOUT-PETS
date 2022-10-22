@@ -17,8 +17,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Cat />} />
-          <Route path='/dogs' element={<Dog />} />
-          <Route path='/cats' element={<Navigate to="/" />} />
+          <Route path='/dog' element={<Dog />} />
+          <Route path='/cat' element={<Navigate to="/" />} />
           <Route path='*' element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>

@@ -1,0 +1,25 @@
+.navbar {
+    width: 100%;
+    background: #58249C;
+    padding: 20px;
+    color: #FFF;
+    box-sizing: border-box;
+}
+.navbar ul {
+    display: flex;
+    margin: 0 auto;
+    max-width: 960px;
+    align-items: center;
+}
+.title {
+    margin-right: auto;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.navbar a {
+    margin-left: 40px;
+    text-decoration: none;
+    color: #FFF;
+}
