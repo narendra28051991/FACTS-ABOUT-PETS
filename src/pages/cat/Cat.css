@@ -1,0 +1,44 @@
+.fact-list {
+    max-width: 1200px;
+    margin: 40px auto;
+}
+.fact-list .fact {
+    background: #FFF;
+    color: #333;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+    position: relative;
+}
+.fact-list .fact h3 {
+    margin-bottom: 6px;
+    color: #666;
+}
+.fact-list .fact p {
+    font-size: 0.9em;
+    color: #999;
+}
+.fact-list .fact div {
+    font-size: 0.7em;
+    color: #555;
+    margin: 20px 0;
+}
+.fact-list .fact a {
+    margin: 0 auto;
+    padding: 5px;
+    width: 120px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #E2E2E2;
+    color: #555;
+    font-size: 0.9em;
+}
+.fact-list .fact:hover {
+    transform: rotate(3deg);
+}
+.fact-list .fact a:hover {
+    color: #E2E2E2;
+    background-color: #555;
+}
