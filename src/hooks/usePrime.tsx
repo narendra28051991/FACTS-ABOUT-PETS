@@ -1,4 +1,4 @@
-export const usePrime = (num) => {
+export const usePrime = (num: number) => {
     let prime = true;
 
     if(num>=2) {

@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 
-export const useFetch = (url) => {
-    const [data, setData] = useState(null)
-    const [error, setError] = useState(null)
+export const useFetch = (url: string) => {
+    const [data, setData] = useState<{fact: string; length: number}>({
+        fact: '',
+        length: 0
+    })
+    const [error, setError] = useState('')
     const [isPending, setIsPending] = useState(false)
 
     useEffect(() => {
@@ -18,10 +21,10 @@ export const useFetch = (url) => {
                 const data = await response.json()
                 setData(data)
                 setIsPending(false)
-                setError(null)
+                setError('')
             }
 
-            catch(err) {
+            catch(err: any) {
                 if(err.name === 'AbortError') {
                     setError('The fetch was aborted')
                 }

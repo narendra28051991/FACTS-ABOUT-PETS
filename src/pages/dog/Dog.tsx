@@ -21,7 +21,17 @@ import Image8 from '../../assets/images/eight.jpg'
 import Image9 from '../../assets/images/nine.jpg'
 import Image10 from '../../assets/images/ten.jpg'
 
-export default function Dog() {
+type DogArray = {
+  id: number
+  img: string
+  comment: string
+}
+
+type DogImages = {
+  [key: string]: DogArray
+}
+
+export default function Dog({key: string}: DogImages) {
   const { mode } = useMode()
 
   const dogImages = [
@@ -40,31 +50,32 @@ export default function Dog() {
   const [choice, setChoice] = useState('')
   const [image, setImage] = useState([dogImages[8]])
 
-  const binary = useBinary(choice)
-  const prime = usePrime(choice)
+  const number = parseInt(choice)
+  const binary = useBinary(number)
+  const prime = usePrime(number)
   const random = useRandom(2, 4)
 
-  const findImageNumber = (e) => {
+  const findImageNumber = (e: { preventDefault: () => void }) => {
     e.preventDefault()
     
-    if (choice < 0) {
+    if (number < 0) {
       setImage([dogImages[0]])
     }
     else if (binary) {
       setImage([dogImages[6]])
     }
-    else if (choice > 100) {
+    else if (number > 100) {
       setImage([dogImages[9]])
     }
     else if (prime) {
       setImage([dogImages[random-1]])
     }
-    else if (choice % 5 === 0) {
-      setImage([dogImages[4]], [dogImages[5]])
+    else if (number % 5 === 0) {
+      setImage([dogImages[4], dogImages[5]])
     }
     else {
-      let staticNumber = parseInt(process.env.REACT_APP_STATIC_DOG)
-      setImage([dogImages[staticNumber-1]])
+      const staticNumber: string = (process.env.REACT_APP_STATIC_DOG as string)
+      setImage([dogImages[parseInt(staticNumber)-1]])
     }
 
     setChoice('')
@@ -87,10 +98,12 @@ export default function Dog() {
       </form>
 
       {image && image.map(filter => (
-        <ul key={filter.id}>
-          <li>Comment: {filter.comment}</li>
-          <li><img src={filter.img} alt="dog-images" /></li>
-        </ul>
+        <>
+          <p>Comment: {filter.comment}</p>
+          <ul key={filter.id}>
+            <li><img src={filter.img} alt="dog-images" /></li>
+          </ul>
+        </>
       ))}
     </div>
   )

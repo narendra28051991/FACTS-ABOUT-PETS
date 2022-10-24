@@ -1,8 +1,8 @@
-import { createContext, useReducer } from 'react'
+import { createContext, useReducer, ReactNode } from 'react'
 
-export const ModeContext = createContext()
+export const ModeContext = createContext({} as ReturnType<typeof modeReducer>)
 
-const modeReducer = (state, action) => {
+const modeReducer = (state: any, action: { type: string; payload: string }) => {
     switch (action.type) {
         case 'CHANGE_MODE':
             return { ...state, mode: action.payload }
@@ -11,12 +11,16 @@ const modeReducer = (state, action) => {
     }
 }
 
-export function ModeProvider({ children }) {
+type Children = {
+    children: ReactNode
+}
+
+export function ModeProvider({ children }: Children) {
     const [state, dispatch] = useReducer(modeReducer, {
         mode: 'light'
     })
 
-    const changeMode = (mode) => {
+    const changeMode = (mode: string) => {
         dispatch({ type: 'CHANGE_MODE', payload: mode })
     }
 
