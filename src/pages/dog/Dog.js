@@ -17,35 +17,23 @@ import './Dog.css';
 
 export default function Dog() {
   const dogImages = [
-    {id: 1, img: Image1},
-    {id: 2, img: Image2},
-    {id: 3, img: Image3},
-    {id: 4, img: Image4},
-    {id: 5, img: Image5},
-    {id: 6, img: Image6},
-    {id: 7, img: Image7},
-    {id: 8, img: Image8},
-    {id: 9, img: Image9},
-    {id: 10, img: Image10}
-  ]
-
-  const comments = [
-    'Hi, My name is Munna. Please submit your number !',
-    'The entered number is a negative number',
-    'The entered number in binary has 4 or more digits and is all 1s!',
-    'The entered number is greater than 100',
-    'The entered number is a prime number',
-    'The entered number is a divisible by 5',
-    'The entered number is a positive number'
+    {id: 1, img: Image1, comment: 'The entered number is a negative number'},
+    {id: 2, img: Image2, comment: 'The entered number is a prime number'},
+    {id: 3, img: Image3, comment: 'The entered number is a prime number'},
+    {id: 4, img: Image4, comment: 'The entered number is a prime number'},
+    {id: 5, img: Image5, comment: 'The entered number is a divisible by 5'},
+    {id: 6, img: Image6, comment: 'The entered number is a divisible by 5'},
+    {id: 7, img: Image7, comment: 'The entered number in binary has 4 or more digits and is all 1s!'},
+    {id: 8, img: Image8, comment: 'The entered number is a positive number'},
+    {id: 9, img: Image9, comment: 'Hi, My name is Munna. Please submit your number !'},
+    {id: 10, img: Image10, comment: 'The entered number is greater than 100'}
   ]
 
   const [choice, setChoice] = useState('')
-  const [comment, setComment] = useState(comments[0])
   const [image, setImage] = useState([dogImages[8]])
 
   const findImageNumber = (e) => {
     e.preventDefault()
-    setComment('')
     setImage([])
   }
 
@@ -65,9 +53,9 @@ export default function Dog() {
         <button>Preview</button>
       </form>
 
-      {comment && <p>Comment: {comment}</p>}
       {image && image.map(filter => (
         <ul key={filter.id}>
+          <li>Comment: {filter.comment}</li>
           <li><img src={filter.img} alt="dog-images" /></li>
         </ul>
       ))}
