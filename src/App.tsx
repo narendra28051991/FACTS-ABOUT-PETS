@@ -22,8 +22,8 @@ function App() {
         <ModeSelector />
         <Routes>
           <Route path='/' element={<Cat />} />
+          <Route path='/cat' element={<Cat />} />
           <Route path='/dog' element={<Dog />} />
-          <Route path='/cat' element={<Navigate to="/" />} />
           <Route path='*' element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
