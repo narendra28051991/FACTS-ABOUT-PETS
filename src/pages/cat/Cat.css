@@ -42,3 +42,20 @@
     color: #E2E2E2;
     background-color: #555;
 }
+
+/* dark mode */
+.fact-list .fact.dark {
+    background: #555;
+}
+.fact-list .fact.dark p,
+.fact-list .fact.dark h3 {
+    color: #e4e4e4;
+}
+.fact-list .fact.dark a {
+    background-color: #333;
+    color: #e2e2e2;
+}
+.fact-list .fact.dark a:hover {
+    background-color: #e2e2e2;
+    color: #333;
+}

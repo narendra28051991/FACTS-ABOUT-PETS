@@ -18,3 +18,24 @@
     border-radius: 4px;
     box-shadow: 3px 3px #999;
 }
+
+/* dark mode */
+.dogs.dark {
+    color: #e2e2e2;
+}
+.dogs.dark h2 {
+    color: #fff;
+}
+.dogs.dark input {
+    color: #e2e2e2;
+    border: 1px solid #777;
+    background-color: #555;  
+}
+.dogs.dark button {
+    color: #e2e2e2;
+    border: 2px solid #e2e2e2;
+}
+.dogs.dark button:hover {
+    color: #333;
+    background: #e2e2e2;
+}

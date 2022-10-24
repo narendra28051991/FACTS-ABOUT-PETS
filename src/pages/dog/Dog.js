@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useBinary } from '../../hooks/useBinary'
 import { usePrime } from '../../hooks/usePrime'
 import { useRandom } from '../../hooks/useRandom'
+import { useMode } from "../../hooks/useMode"
 
 // styles
 import './Dog.css';
@@ -21,6 +22,8 @@ import Image9 from '../../assets/images/nine.jpg'
 import Image10 from '../../assets/images/ten.jpg'
 
 export default function Dog() {
+  const { mode } = useMode()
+
   const dogImages = [
     {id: 1, img: Image1, comment: 'The entered number is a negative number'},
     {id: 2, img: Image2, comment: 'The entered number is a prime number'},
@@ -68,7 +71,7 @@ export default function Dog() {
   }
 
   return (
-    <div className='dogs'>
+    <div className={`dogs ${mode}`}>
       <h2 className='page-title'>Dog Image Loader</h2>
       <form onSubmit={findImageNumber}>
         <label>
