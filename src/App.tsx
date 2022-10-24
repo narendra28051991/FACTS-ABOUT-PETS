@@ -21,10 +21,10 @@ function App() {
         <Navbar />
         <ModeSelector />
         <Routes>
-          <Route path='/' element={<Cat />} />
           <Route path='/cat' element={<Cat />} />
           <Route path='/dog' element={<Dog />} />
-          <Route path='*' element={<Navigate to="/" />} />
+          <Route path='/fact' element={<Navigate to="/cat" />} />
+          <Route path='*' element={<Navigate to="/cat" />} />
         </Routes>
       </BrowserRouter>
     </div>

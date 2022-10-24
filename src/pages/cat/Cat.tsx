@@ -22,7 +22,7 @@ export default function Cat() {
           <h2>Cat Fact of the day</h2>
           <h3>{data.fact}</h3>
           <p>Word length: {data.length}</p>
-          <div><Link to='/cat'>New Fact</Link></div>
+          <div><Link to='/fact'>New Fact</Link></div>
         </div>
       )}  
     </div>

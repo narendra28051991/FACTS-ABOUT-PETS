@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className='navbar'>
       <ul>
         <li className='title'>facts about PETS</li>
-        <li><Link to='/cat'>Cats</Link></li>
+        <li><Link to='/fact'>Cats</Link></li>
         <li><Link to='/dog'>Dogs</Link></li>
       </ul>
     </nav>
